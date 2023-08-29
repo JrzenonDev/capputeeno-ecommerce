@@ -1,4 +1,5 @@
 "use client";
+import { FilterByPriority } from "../filterByPriority/FilterByPriority";
 import { FilterByType } from "../filterByType/FilterByType";
 import { FilterBarProps } from "./style";
 
@@ -8,6 +9,7 @@ export function FilterBar(props: FilterBarProps) {
   return (
     <FilterBarProps>
       <FilterByType />
+      <FilterByPriority />
     </FilterBarProps>
   );
 }
