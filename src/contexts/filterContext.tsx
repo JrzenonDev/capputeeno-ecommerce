@@ -3,7 +3,7 @@
 import { FilterType } from "@/types/filterTypes";
 import { ReactNode, createContext, useState } from "react";
 
-const FilterContext = createContext({
+export const FilterContext = createContext({
   search: "",
   page: 0,
   type: FilterType.ALL,
