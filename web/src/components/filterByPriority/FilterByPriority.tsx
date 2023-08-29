@@ -4,9 +4,7 @@ import { FilterContainer, PriorityFilter } from "./style";
 import { useFilter } from "@/hooks/useFilter";
 import { PriorityTypes } from "@/types/priorityTypes";
 
-interface FilterByPriorityProps {}
-
-export function FilterByPriority(props: FilterByPriorityProps) {
+export function FilterByPriority() {
   const [isOpen, setIsOpen] = useState(false);
   const { setPriority } = useFilter();
 
@@ -31,7 +29,7 @@ export function FilterByPriority(props: FilterByPriorityProps) {
             Preço: Menor - Maior
           </li>
           <li onClick={() => handleUpdatePriority(PriorityTypes.BIGGEST_PRICE)}>
-            Preço: Maior - menor
+            Preço: Maior - Menor
           </li>
           <li onClick={() => handleUpdatePriority(PriorityTypes.POPULARITY)}>
             Mais vendidos
