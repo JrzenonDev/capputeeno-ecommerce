@@ -2,13 +2,7 @@ import { ProductsFetchResponse } from "@/types/productsFetchResponse";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
 import { useFilter } from "./useFilter";
-import { FilterType } from "@/types/filterTypes";
-import {
-  getCategoryByType,
-  getFieldByPriority,
-  mountQuery,
-} from "@/utils/graphqlFilters";
-import { PriorityTypes } from "@/types/priorityTypes";
+import { mountQuery } from "@/utils/graphqlFilters";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
