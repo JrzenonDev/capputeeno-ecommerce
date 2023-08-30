@@ -1,6 +1,7 @@
 import { InputHTMLAttributes } from "react";
 import { SearchIcon } from "../icons/SearchIcon";
 import { Input, InputContainer } from "./style";
+import { StyleSheetManager } from "styled-components";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
@@ -11,13 +12,15 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export function PrimaryInput(props: InputProps) {
   return (
     <>
-      <InputContainer>
-        <Input
-          onChange={(event) => props.handleChange(event.target.value)}
-          {...props}
-        />
-        <SearchIcon />
-      </InputContainer>
+      <StyleSheetManager shouldForwardProp={(prop) => prop !== "handleChange"}>
+        <InputContainer>
+          <Input
+            onChange={(event) => props.handleChange(event.target.value)}
+            {...props}
+          />
+          <SearchIcon />
+        </InputContainer>
+      </StyleSheetManager>
     </>
   );
 }
